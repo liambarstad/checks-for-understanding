@@ -1,0 +1,92 @@
+List the five common HTTP verbs and what the purpose is of each verb.
+  - get: to fetch views content
+  - post: to upload content and/or add to database
+  - delete: to delete content and/or remove from database
+  - put: ??
+  - update: to rewrite content and/or replace elements in the database
+
+What is Sinatra?
+  Sinatra is a hosting service for ruby-based websites
+
+What is MVC?
+  The model-view-controller style of creating ruby-based websites, where the controller files navigate
+  through webpages, stored in views. It can also add erb content, initiated through models. The models
+  stores and interprets data stored in the database.
+
+Why do we follow conventions when creating our actions/path names in our Sinatra routes?
+  Sinatra looks for specific directories in the program directory, the directory name
+  dictating functionality. However, I don't yet know if websites with different architecture
+  can be hosted through ruby. At very least, action names (and potentially path names) following
+  a specific convention would make websites in Sinatra easy to edit, improve upon, and understand.
+
+What types of variables are accessible in our view templates without explicitly passing them?
+  classes, ids, href values, path values, and parameters are variables that are stored in HTML and CSS.
+  Even tags can be potential variables when values are assigned to groups of them in CSS (maybe class or instance).
+
+Given the following block of code, how would I pass an instance variable count with a value of 1 to my index.erb template?
+
+get '/horses' do
+  @instance_variable = 1
+  erb :index
+end
+
+In the same code block, how would I pass a local variable name with a value of Mr. Ed to the view?
+
+get '/horses' do
+  local_variable = "Mr. Ed"
+  erb :index { local_variables: => local_variable }
+end
+
+What's the purpose of ERB?
+  To pass computations off to be handled by the controller (and potentially be handled
+  elsewhere later) and render site content.
+
+Why do I need a development AND test database?
+  Having separate development and test databases reduces run time on tests through the use of fixtures
+  (if you're not using factories). As well, data can be muddled up in a test database and be checked against
+  the original for errors.
+
+What's responsive design?
+
+What is CRUD and why is it important?
+  CRUD stands for create, read, update, destroy. It outlines what functionality all websites, databases,
+  and arguably classes and objects, should have in order to be usable.
+
+What does HTTP stand for?
+  Hyper-text Transfer Protocol
+
+What are the two ways to interpolate Ruby in an ERB view template? What's the difference between these two ways?
+  <=% ... %> => runs ruby code and inserts the output of it's contents into the HTML
+  <% ... %> => runs ruby code and produces no output, changes in scope are saved to ERB (environment?)
+  #{} => call local variables passed to ERB template
+
+What's an ORM?
+  Object Relational Mapping
+
+What's the most commonly used ORM in ruby (Sinatra & Rails)?
+  Rails
+
+Let's say we have an application with restaurants. There are seven verb + path combinations necessary to provide full CRUD functionality for our restaurant application. List each of the seven combinations, and explain what each is for.
+  - get "/restaurants"
+  - get "/restaurants/:id"
+  - get "/restaurants/new"
+  - post "/restaurants"
+  - get "/restaurants/:id/edit"
+  - update "/restaurants/:id"
+  - delete "/restuarants/:id"
+
+What's a migration?
+  A ruby fie that runs database interaction software such as SQL that seeds the database.
+
+When you create a migration, does it automatically modify your database?
+  No, the file must be run by running "$ ruby migration_path"
+
+How does a model relate to a database?
+  It creates ruby objects from the database, and passes objects created from HTML input to the database.
+  It also makes the calls to edit or delete database elements.
+
+What's the difference between agile workflow and waterfall method?
+  Agile workflow involves designing small parts of the application, testing them, and implementing them.
+  The waterfall method involves designing the entire application, coding it, and then testing it.
+  
+What is the difference between #new and #create?
