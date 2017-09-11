@@ -1,0 +1,54 @@
+* What is a cookie?
+
+  - A cookie is a piece of information stored in the user's browser that is not encrypted, for use
+    in controllers and other website mechanics.
+
+* What’s the difference between a session and a cookie?
+
+  - A session is encrypted to prevent tampering, a cookie is not.
+
+* What’s a flash and when do you want to use flashes?
+
+  - A flash is a preset key, similar to a parameter, that is used to contain specific messages that can
+    be displayed when certain actions are performed.
+
+* Why do people say “HTTP is stateless”?
+
+  - Every time a controller action is called, a new instance of that controller (and view(s)) is invoked.
+
+* What’s authentication? Explain.
+
+  - Authentication is the act of checking a clients sessions or cookies to assertain whether or not they have
+    the right privileges to call certain actions or see certain content, etc.
+
+* What’s the difference between authentication and authorization?
+
+  - Authorization refers to when a user's information is checked initially to grant them certain sessions,
+    whereas authentication is done site-wide.
+
+* What’s a before filter?
+
+  - Automatic methods that are called before controller actions.
+
+* How do we keep track of a user once they’ve logged in?
+
+  - Their ID or other identifying information is stored in a session key value.
+
+* When do you want to namespace a resource? When do you want to nest a resource? What's the differences between those two approaches?
+
+  - A resource should be namespaced when collections of the resource belong to a specific instance of the
+    thing being referenced by the namespace. It should be nested when the greater resource has its own controller
+    actions.
+
+* At a high level, what tools can you use to implement authorization? How would you use them?
+
+  - I would use sessions to differentiate between authorized clients and I would use encryption softwares
+    like bcrypt to encrypt passwords and other sensitive information.
+
+* What's an enum, and what advantages does it offer? What data type needs to be in your database to use an enum? Where do you declare an enum?
+
+  - An enum is a collection of aliases, dependent on the specific value of the integer value of a specific
+    attribute of a model. For instance, an admin could be stored as a 1, and a user as a 0. An enum is declared
+    in a model.
+
+* What are some strategies you can use to keep your views DRY?
